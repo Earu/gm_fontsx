@@ -1,5 +1,23 @@
 # gm_fontsx
-Check what fonts are installed and available on your system.
+Since apparently we're never getting a proper way to check for installed fonts on Garry's Mod, this has to exist 😒
+
+### Usage
+```lua
+require("fontsx")
+
+-- creates a gmod virtual font depending on whether the system font "Consolas" is available
+surface.CreateFont("my_virtual_font", {
+	font = fonts.Exists("Consolas") and "Consolas" or "Roboto",
+	size = 15,
+})
+```
+
+```lua
+require("fontsx")
+
+-- prints all system fonts currently available
+PrintTable(fonts.GetAll())
+```
 
 ### Compiling
 - Open a terminal
